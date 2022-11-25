@@ -1,0 +1,419 @@
+@import "variables";
+@import "footer";
+@import "button";
+@import "fuente";
+@import "mixins";
+
+$ancho-1200: 1200px;
+
+
+body {
+    background-color: $color-primario;
+}
+
+.bronx {
+    font-size: 40px;
+    color: $color-primario;
+    background-color: $color-secundario;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+
+}
+
+li:hover {
+    background-color: $color-activo;
+}
+
+ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $color-secundario;
+    opacity: 0.9;
+
+    li {
+        padding: 1em;
+
+        a {
+            color: $color-primario;
+            text-align: center;
+            padding: 14px 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.img {
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.div-p {
+    margin: 0 auto;
+    width: 600px;
+    margin-top: 20px;
+    /* sombra de caja conenedora de texto */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.07);
+}
+
+.div-h2 {
+    animation-duration: 3s;
+    animation-name: aparecer;
+    animation-iteration-count: infinite;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.p {
+    margin-left: 9px;
+    padding-top: 30px;
+}
+
+.div-h2 {
+    text-align: center;
+}
+
+.p2 {
+    margin-left: 9px;
+    padding-top: 22px;
+}
+
+.p3 {
+    margin-left: 9px;
+    padding-top: 22px;
+}
+
+.img-2 {
+    width: 601px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.div-b {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+@media (max-width: 900px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto;
+        ;
+    }
+
+    h2 {
+        text-align: justify;
+    }
+
+
+}
+
+/* catalogo */
+
+h1 {
+    font-size: 0%;
+}
+
+li:hover {
+    background-color: $color-activo
+}
+
+ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+
+
+    li {
+        padding: 1em;
+
+
+        a {
+            color: $color-primario;
+            text-align: center;
+            padding: 14px 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.catalogo {
+    display: grid;
+    grid-template-areas:
+        "img1"
+        "img2"
+        "img3"
+        "img4"
+        "img5";
+    grid-template-columns: repeat(1, auto);
+    align-content: stretch;
+    gap: 10px;
+    padding: 0.5vw;
+    margin-top: 5vh;
+
+    justify-items: center;
+
+}
+
+.img1 {
+    grid-area: img1;
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+
+}
+
+.img4 {
+    grid-area: img4;
+}
+
+.img5 {
+    grid-area: img5;
+}
+
+@media only screen and (min-width: 800px) {
+    .catalogo {
+        display: grid;
+        grid-template-areas:
+            'img1 img1 img2 img2 '
+            'img3 img3 img4 img4'
+            'img5 img5 img5 img5';
+        grid-template-columns: repeat(4, auto);
+        align-content: stretch;
+        gap: 10px;
+        padding: 0.5vw;
+        justify-content: stretch;
+        justify-items: center;
+        margin-left: 0%;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .img4 {
+        margin-top: 10px;
+        margin-right: 33%;
+    }
+
+    .img5 {
+        margin-top: 3px
+    }
+}
+
+.catalogo div img {
+    @include tamaño;
+    object-fit: cover;
+}
+
+.div-b {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* fin catalogo */
+
+/* contacto */
+
+.body-contacto {
+    margin: 0 !important;
+    background-color: $color-active-link;
+    color: $color-secundario;
+    font-family: sans-serif;
+
+}
+
+.div-cont {
+    position: fixed;
+    right: 25%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .div-cont {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .footer-contacto {
+        width: 100vh;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+    }
+}
+
+/* fin contacto */
+
+/* mayoristas */
+
+body {
+    display: block;
+    background-color: $color-primario;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a:hover {
+    background-color: $color-activo;
+}
+
+ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $color-secundario;
+    opacity: 0.9;
+
+    li {
+        padding: 1em;
+    }
+}
+
+li p {
+    color: $color-primario;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 0%;
+}
+
+@media (max-width: 900px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100vh;
+    }
+
+    .div-p {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-left: 30%;
+    }
+
+    .footer-contenedor {
+        width: 100vh;
+    }
+
+    .img-mayoristas {
+        margin-left: 3%;
+    }
+
+    .div-b {
+        margin-left: 80%;
+    }
+}
+
+.div-b {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.img-mayoristas {
+    margin-left: 26%;
+    margin-top: 2%;
+}
+
+.div-texto {
+    color: $color-secundario;
+    text-align: center;
+    justify-content: center;
+
+}
+
+/* fin mayoristas */
+
+/* nosotros */
+
+
+@media (max-width: 900px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100vh;
+    }
+
+    h2 {
+        text-align: justify;
+    }
+
+    .footer-contenedor {
+        width: 100vh;
+    }
+}
+
+
+
+h1 {
+    font-size: 0%;
+}
+
+.div-p {
+    margin: 0 auto;
+    width: 740px;
+    margin-top: 20px;
+    /* sombra de caja conenedora de texto */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.07);
+}
+
+.div-img {
+    margin-top: 30px;
+}
+
+.img {
+    display: block;
+    margin: auto;
+    width: 740px;
+}
+
+
+.div-img2 {
+    margin-left: 27%;
+    margin-top: 3%;
+}
+
+/* fin nosotros */
